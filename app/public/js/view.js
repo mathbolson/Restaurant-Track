@@ -2,9 +2,7 @@
 $("#search-btn").on("click", function(event) {
   event.preventDefault();
 
-
-
-  // Save the book they typed into the restaurant-search input
+  // Save the restaurant they typed into the restaurant-search input
   var cityName = $("#restaurant-search").val().trim();
 
   var settings = {
@@ -13,21 +11,11 @@ $("#search-btn").on("click", function(event) {
     "timeout": 0,
   };
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(settings).done(function (response) { 
     console.log(response.restaurants);
     renderRestaurants(response.restaurants);
   });
-
-
-
-  // // Make an AJAX get request to our api, including the user's book in the url
-  // $.get("/api/" + restaurantSearched, function(data) {
-
-  //   console.log(data);
-  //   // Call our renderBooks function to add our books to the page
-  //   renderBooks(data);
-
-  // });
+  
 
 });
 
@@ -53,51 +41,19 @@ $("#hello").on("click", function(event) {
       // Log the data we found
       console.log(data);
     });
-
-  // // Empty each input box by replacing the value with an empty string
-  // $("#title").val("");
-  // $("#author").val("");
-  // $("#genre").val("");
-  // $("#pages").val("");
+//   // Empty each input box by replacing the value with an empty string
+$("#usernameInput").val("");
+$("#restaurantNameInput").val("");
+$("#ratingInput").val("");
+// $("#pages").val("");
+ 
 
 });
 
-// // When user hits the author-search-btn
-// $("#author-search-btn").on("click", function() {
 
-//   // Save the author they typed into the author-search input
-//   var authorSearched = $("#author-search").val().trim();
-
-//   // Make an AJAX get request to our api, including the user's author in the url
-//   $.get("/api/author/" + authorSearched, function(data) {
-
-//     // Log the data to the console
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderBooks(data);
-
-//   });
-
-// });
-
-// // When user hits the genre-search-btn
-// $("#genre-search-btn").on("click", function() {
-
-//   // Save the book they typed into the genre-search input
-//   var genreSearched = $("#genre-search").val().trim();
-
-//   // Make an AJAX get request to our api, including the user's genre in the url
-//   $.get("/api/genre/" + genreSearched, function(data) {
-
-//     console.log(data);
-//     // Call our renderBooks function to add our books to the page
-//     renderBooks(data);
-
-//   });
-
-// });
 
 function renderRestaurants(data) {
+
 
   console.log("renderRestaurants")
   //if (data.length !== 0) {
@@ -106,37 +62,61 @@ function renderRestaurants(data) {
     // $("#stats").show();
 
   for (var i = 0; i < data.length; i++) {
-    $("#restaurantList").append('<h4>' + data[i].name + '</h4>');
+    $("#restaurantList").append('<div class="cards">' +
+     '<button class="restaurantButton" id="' + data[i].name + '" >' + data[i].name + '</button>' +
+      '<i class="fa fa-map-marker" style="font-size:24px">' + "Address: " + data[i].address + '</i>' +
+     '<i class="fa fa-phone" style="font-size:24px">' + "Phone Number: " + data[i].phone + '</i>' +
+     //'<h4>' + "Price 1-5: " +
+     // data[i].price + '</h4>' +
+     '</div>');
+
   }
 
+  var modal = document.getElementById("myModal");
+
+  $(".restaurantButton").css("font-size", "15px")
+  $(".restaurantButton").css("margin-top", "15px")
+  $(".restaurantButton").css("border", "none")
+  $(".restaurantButton").css("font-weight", "bold")
+  $(".restaurantButton").css("font-family", "Trebuchet MS, Helvetica, sans-serif")
+
+  $(".restaurantButton").css("margin-left", "15px")
+  $(".cards").css("border", "1px solid black")
+  $(".cards").css("margin-bottom", "10px")
+  // $(".cards").css("margin-left", "5px")
+  $(".cards").css("margin-right", "50px")
+  $(".cards").css("max-width", "225px")
+  $(".cards").css("height", "250px")
+  $(".cards").css("background-color", "white")
+  $(".cards").css("float", "left")
+
+  $(".fa.fa-map-marker").css("margin-top", "25px")
+  // $(".fa.fa-phone").css("margin-top", "20px") 
 
 
-      // var div = $("<div>");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
 
-      // div.append("<h2>" + data[i].name + "</h2>");
-      // div.append("<p>Author: " + data[i].author + "</p>");
-      // div.append("<p>Genre: " + data[i].genre + "</p>");
-      // div.append("<p>Pages: " + data[i].pages + "</p>");
-      // div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE BOOK</button>");
 
-      // $("#stats").append(div);
-
-  // }
-
-    // $(".delete").click(function() {
-
-    //   $.ajax({
-    //     method: "DELETE",
-    //     url: "/api/book/" + $(this).attr("data-id")
-    //   })
-    //     // On success, run the following code
-    //     .then(function() {
-    //       console.log("Deleted Successfully!");
-    //     });
-
-    //   $(this).closest("div").remove();
-
-    // });
-
- // }
+  $(".restaurantButton").on('click', function(event){
+    $("#restaurantNameInput").val(event.target.innerHTML);
+    modal.style.display = "block";
+    //(... rest of your JS code)
+});
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
 }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+}
+  

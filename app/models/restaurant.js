@@ -10,15 +10,15 @@ var sequelize = require("../config/connection.js");
 var Rating = sequelize.define("rating", {
   username: Sequelize.STRING,
   restaurant_name: Sequelize.STRING,
-  rating: Sequelize.STRING,
+  rating: Sequelize.INTEGER,
 });
 
 Rating.sync({force: true}).then(function() {
   // Table created
   return Rating.create({
-    username: 'Matt',
+    username: 'Matheus Bolson',
     restaurant_name: "Chipotle",
-    rating: "###"
+    rating: 5
   });
 });
 

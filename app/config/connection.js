@@ -19,3 +19,24 @@ var sequelize = new Sequelize("restaurant_db", "root", "root", {
 
 // Exports the connection for other files to use
 module.exports = sequelize;
+
+
+// var mysql = require('mysql');
+
+// var con = mysql.createConnection({
+//   host: "us-cdbr-east-02.cleardb.com",
+//   user: "b31abbe3c1dafa",
+//   password: "0c5bc512",
+//   database: "heroku_e56097e5cbe37df"
+// });
+
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   /*Create a table named "customers":*/
+//   var sql = "CREATE TABLE ratings (username VARCHAR(255), restaurant_name VARCHAR(255), rating_VARCHAR(255))";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("Table created");
+//   });
+// });

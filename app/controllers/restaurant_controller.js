@@ -28,12 +28,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
 
-  // short route loads the short.html page, where short books in the db are displayed
-  app.get("/short", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/short.html"));
-  });
+  // // short route loads the short.html page, where short books in the db are displayed
+  // app.get("/short", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/short.html"));
+  // });
 
-  // long route loads the long.html page, where long books in the db are displayed
+  // // long route loads the long.html page, where long books in the db are displayed
   app.get("/long", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/long.html"));
   });
