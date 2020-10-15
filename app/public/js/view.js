@@ -6,7 +6,7 @@ $("#search-btn").on("click", function(event) {
   var cityName = $("#restaurant-search").val().trim();
 
   var settings = {
-    "url": "http://opentable.herokuapp.com/api/restaurants?city=" + cityName,
+    "url": "https://opentable.herokuapp.com/api/restaurants?city=" + cityName,
     "method": "GET",
     "timeout": 0,
   };
