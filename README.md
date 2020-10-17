@@ -28,9 +28,9 @@
   MIT_License
   
   ## Contributors:
-  Zachary Bryan
-  Mando Estrada
-  Jared Simpson
+  **Zachary Bryan [Github Profile](https://github.com/zacharybryan)<br>
+  Mando Estrada [Github Profile](https://github.com/Mando619)<br>
+  Jared Simpson<br>**
   
   ## Testing:
   No
