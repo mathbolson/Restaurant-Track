@@ -97,6 +97,45 @@
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.5), 0 34px 80px 0 rgba(0, 0, 0, 0.19);
   }
 
+ #firstBox {
+    background-image: url("../img/bg1.jpeg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 400px;
+  }
+
+  #secondBox {
+    background-image: url("../img/bg2.jpeg");
+    background-position: 40% 40%;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 300px;
+  }
+  #secondboxbtn.text-center {
+    margin-top: 100px;
+  }
+#nuovaBox.jumbotron {
+  background-image: url("../img/bg3.jpeg");
+  background-position: 50% 45%;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 300px;
+}
+.anotherButtons{
+  margin-top: 100px;
+}
+#novaBox.jumbotron{
+  background-image: url("../img/bg5.jpeg");
+  background-position: 30% 30%;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 400px;
+    padding-top: 200px;
+    /* color: lightpink;
+    text-shadow: 3px 2px black; */
+}
+
   /* .restaurantButton {
     border: none;
   } */
