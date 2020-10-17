@@ -117,17 +117,19 @@
   }
 #nuovaBox.jumbotron {
   background-image: url("../img/bg3.jpeg");
-  background-position: 50% 45%;
+  background-position: 50% 50%;
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    height: 300px;
+    height: 400px;
+    padding-top: 100px;
+    padding-left: 50px;
 }
 .anotherButtons{
   margin-top: 100px;
 }
 #novaBox.jumbotron{
   background-image: url("../img/bg5.jpeg");
-  background-position: 30% 30%;
+  background-position: 20% 20%;
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     height: 400px;
